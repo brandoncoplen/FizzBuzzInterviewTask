@@ -8,8 +8,18 @@
         static void Main(string[] args)
         {
             var fizzBuzzer = new FizzBuzz();
-            string value = fizzBuzzer.DemoMethod();
-            Console.WriteLine(value);
+
+            Console.WriteLine("Enter an integer to FizzBuzzify:");
+            if (int.TryParse(Console.ReadLine(), out int input))
+            {
+                string value = fizzBuzzer.FizzBuzzifyAnInt(input);
+                Console.WriteLine($"Result: {value}");
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a valid integer.");
+            }
+
             Console.ReadKey();
         }
     }
